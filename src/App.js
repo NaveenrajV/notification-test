@@ -14,7 +14,7 @@ function App() {
   const dataLink =
     "https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json";
 
-  const data = {
+  const data1 = {
     "1": {
       image:
         "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
@@ -66,6 +66,7 @@ function App() {
     // }
   };
 
+  const data = {};
   return (
     <div className="App">
       <div>Item 1</div>
@@ -73,7 +74,7 @@ function App() {
       <div>
         <Notifications
           // renderItem={CustomComponent}
-          data={data}
+          data={data1}
           header={{ title: "Notifications", option: "View All" }}
           displaySeeAll={false}
           markAllAsRead={markAllAsRead}
@@ -85,6 +86,19 @@ function App() {
       </div>
       <div>Item 4</div>
       <div>Item 5</div>
+      <div>
+        <Notifications
+          // renderItem={CustomComponent}
+          data={data1}
+          // header={{ title: "Notifications", option: "View All" }}
+          // displaySeeAll={false}
+          markAllAsRead={markAllAsRead}
+          links={{ seeAll: "/seeAll" }}
+          // classNamePrefix="okrjoy"
+          // cardOptions={false}
+          // icon={bell}
+        />
+      </div>
     </div>
   );
 }

@@ -76,6 +76,13 @@ a {
   .okrjoy-notification-items {
     height: 400px;
     overflow: auto;
+
+    .okrjoy-empty-notifications {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+    }
     .okrjoy-card {
       display: flex;
       border-bottom: 1px solid rgba(153, 153, 153, 0.3);
@@ -101,7 +108,7 @@ a {
         .okrjoy-message {
           color: #939393;
           font-weight: 700;
-          min-width: 220px;
+          width: 220px;
           // border: 1px solid black;
         }
       }
