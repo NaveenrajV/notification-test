@@ -4,6 +4,9 @@ import "./App.scss";
 // import "./styles.css";
 import "./okrjoy-styles.scss";
 import CustomComponent from "./CustomComponent/CustomComponent";
+import bell from "./bell.svg";
+import MsgComponent from "./MsgComponent/MsgComponent";
+
 function App() {
   const markAllAsRead = () => {
     console.log("markAllAsRead");
@@ -21,15 +24,21 @@ function App() {
     "2": {
       image:
         "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
-      message: "Kameshwaran S had shared a feedback with you.",
+      message: (
+        <p>
+          Kameshwaran S had shared a{" "}
+          <span style={{ color: "#7ac2fa" }}>feedback</span> with you.
+        </p>
+      ),
+      detailPage: "/"
+    },
+    "3": {
+      image:
+        "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
+      message: <MsgComponent />,
       detailPage: "/"
     }
-    // "3": {
-    //   image:
-    //     "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
-    //   message: "Kameshwaran S had shared a feedback with you.",
-    //   detailPage: "/"
-    // },
+    // ,
     // "4": {
     //   image:
     //     "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
@@ -41,8 +50,15 @@ function App() {
     //     "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
     //   message: "Kameshwaran S had shared a feedback with you.",
     //   detailPage: "/"
-    // },
+    // }
+    // ,
     // "6": {
+    //   image:
+    //     "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
+    //   message: "Kameshwaran S had shared a feedback with you.",
+    //   detailPage: "/"
+    // },
+    // "7": {
     //   image:
     //     "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
     //   message: "Kameshwaran S had shared a feedback with you.",
@@ -62,8 +78,9 @@ function App() {
           displaySeeAll={false}
           markAllAsRead={markAllAsRead}
           links={{ seeAll: "/seeAll" }}
-          classNamePrefix="okrjoy-"
+          classNamePrefix="okrjoy"
           cardOptions={false}
+          icon={bell}
         />
       </div>
       <div>Item 4</div>
