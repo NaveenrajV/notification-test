@@ -1,0 +1,69 @@
+---
+name: Features
+route: /feature
+---
+import { Playground,Props } from 'docz'
+import Notifications from "cb-react-notifications";
+import bell from "./bell.svg"
+import logo from "./cblogo.png"
+import "./okrjoy-styles.css";
+import CustomComponent from "./CustomComponent/CustomComponent";
+
+
+
+
+## Default 
+
+The Default notification component requires only data,funation and links for options.
+
+<Playground>
+  <Notifications
+    data={ "https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json"}
+    links={{ seeAll: "/seeAll" }}
+  />
+</Playground>
+
+## Custom Component 
+
+This can be used customize individual card or message in the notifications.
+
+<Playground>
+  <Notifications
+    renderItem={CustomComponent}
+    data={ "https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json"}
+    links={{ seeAll: "/seeAll" }}
+  />
+</Playground>
+
+## Fully customizable  
+
+The Styles of a component can be provided by using Class name prefix and also icon.
+
+<Playground>
+  <Notifications
+    data={{
+      "1": {
+        image: logo,
+        message: "Kameshwaran S had shared a feedback with you.",
+        detailPage: "/"
+      },
+    "2": {
+      image: logo,
+      message: (
+        <p>
+          Kameshwaran S had shared a <span style={{ color: "#7ac2fa" }}>feedback</span> with you.
+        </p>
+      ),
+      detailPage: "/"
+    }}}
+      links={{ seeAll: "/seeAll" }}
+   header={{
+            title: "Notifications",
+            option: { name: "View All", onClick: ()=>console.log("Clicked") }
+          }}
+      classNamePrefix="okrjoy"
+      cardOptions={false}
+      icon={bell}
+      displaySeeAll={false}
+    />
+</Playground>

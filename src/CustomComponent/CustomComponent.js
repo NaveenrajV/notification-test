@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./CustomComponent.module.scss";
+import classes from "./CustomComponent.module.css";
 
 const CustomComponent = props => {
   const { image, message, receivedTime, imagePosition } = props;

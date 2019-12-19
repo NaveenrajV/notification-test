@@ -1,5 +1,7 @@
 import React from "react";
 import Notifications from "cb-react-notifications";
+import logo from "./cblogo.png";
+
 import "./App.scss";
 // import "./styles.css";
 import "./okrjoy-styles.scss";
@@ -11,22 +13,21 @@ function App() {
   const markAllAsRead = () => {
     console.log("markAllAsRead");
   };
+
   const dataLink =
     "https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json";
 
   const data1 = {
     "1": {
-      image:
-        "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
+      image: logo,
       message: "Kameshwaran S had shared a feedback with you.",
       detailPage: "/"
     },
     "2": {
-      image:
-        "https://synergi-dev.s3.ap-southeast-1.amazonaws.com/profile-pictures/6b924382abac8a886ddf18d1b54b4aad-7eb8ac92ca10898bd6cc31ca6e356c45.png",
+      image: logo,
       message: (
         <p>
-          Kameshwaran S had shared a{" "}
+          Kameshwaran S had shared a
           <span style={{ color: "#7ac2fa" }}>feedback</span> with you.
         </p>
       ),
@@ -71,13 +72,16 @@ function App() {
     <div className="App">
       <div>Item 1</div>
       <div>Item 2</div>
+      {console.log(typeof bell)}
       <div>
         <Notifications
           // renderItem={CustomComponent}
           data={data1}
-          header={{ title: "Notifications", option: "View All" }}
+          header={{
+            title: "Notifications",
+            option: { name: "View All", onClick: markAllAsRead }
+          }}
           displaySeeAll={false}
-          markAllAsRead={markAllAsRead}
           links={{ seeAll: "/seeAll" }}
           classNamePrefix="okrjoy"
           cardOptions={false}
@@ -87,17 +91,7 @@ function App() {
       <div>Item 4</div>
       <div>Item 5</div>
       <div>
-        <Notifications
-          // renderItem={CustomComponent}
-          data={data1}
-          // header={{ title: "Notifications", option: "View All" }}
-          // displaySeeAll={false}
-          markAllAsRead={markAllAsRead}
-          links={{ seeAll: "/seeAll" }}
-          // classNamePrefix="okrjoy"
-          // cardOptions={false}
-          // icon={bell}
-        />
+        <Notifications data={dataLink} links={{ seeAll: "/seeAll" }} />
       </div>
     </div>
   );
