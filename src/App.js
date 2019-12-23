@@ -7,6 +7,8 @@ import "./App.scss";
 import "./okrjoy-styles.scss";
 import CustomComponent from "./CustomComponent/CustomComponent";
 import bell from "./bell.svg";
+import user from "./user.svg";
+import settings from "./gear.svg";
 import MsgComponent from "./MsgComponent/MsgComponent";
 
 function App() {
@@ -14,6 +16,9 @@ function App() {
     console.log("markAllAsRead");
   };
 
+  const fetchData = () => {
+    console.log(" fetch data");
+  };
   const dataLink =
     "https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json";
 
@@ -70,28 +75,51 @@ function App() {
   const data = {};
   return (
     <div className="App">
-      <div>Item 1</div>
-      <div>Item 2</div>
-      {console.log(typeof bell)}
-      <div>
-        <Notifications
-          // renderItem={CustomComponent}
-          data={data1}
-          header={{
-            title: "Notifications",
-            option: { name: "View All", onClick: markAllAsRead }
-          }}
-          displaySeeAll={false}
-          links={{ seeAll: "/seeAll" }}
-          classNamePrefix="okrjoy"
-          cardOptions={false}
-          icon={bell}
+      <div className="title">
+        <img
+          src={
+            "https://pbs.twimg.com/profile_images/643394241616478209/GE-7kygE_400x400.png"
+          }
         />
       </div>
-      <div>Item 4</div>
-      <div>Item 5</div>
-      <div>
-        <Notifications data={dataLink} links={{ seeAll: "/seeAll" }} />
+
+      <div className="items">
+        <div>
+          <Notifications
+            data={dataLink}
+            fetchData={fetchData}
+            links={{ seeAll: "/seeAll" }}
+          />
+        </div>
+
+        {/* <div>
+          <Notifications
+            // renderItem={CustomComponent}
+            data={data1}
+            header={{
+              title: "Notifications",
+              option: { name: "View All", onClick: markAllAsRead }
+            }}
+            displaySeeAll={false}
+            links={{ seeAll: "/seeAll" }}
+            classNamePrefix="okrjoy"
+            cardOptions={false}
+            icon={bell}
+          />
+        </div> */}
+
+        <div>
+          <img
+            src={
+              "https://files.slack.com/files-pri/T02EG6DGW-FS2ATS32S/54b6eb343b72fe4b42129586ffc55615-5df66f45f311c9664c36f4c4cbcfe80a.png"
+            }
+            alt="users"
+          />
+        </div>
+
+        {/* <div>
+        <img src={settings} alt="settings" />
+      </div> */}
       </div>
     </div>
   );

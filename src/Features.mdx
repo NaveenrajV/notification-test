@@ -8,7 +8,7 @@ import bell from "./bell.svg"
 import logo from "./cblogo.png"
 import "./okrjoy-styles.css";
 import CustomComponent from "./CustomComponent/CustomComponent";
-
+import "./pgStyles.css"
 
 
 
@@ -18,7 +18,7 @@ The Default notification component requires only data,funation and links for opt
 
 <Playground>
   <Notifications
-    data={ "https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json"}
+    data="https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json"
     links={{ seeAll: "/seeAll" }}
   />
 </Playground>
@@ -27,13 +27,14 @@ The Default notification component requires only data,funation and links for opt
 
 This can be used customize individual card or message in the notifications.
 
-<Playground>
+<Playground style={{backgroundColor:"red",height:"50px",padding:"5px"}} >
   <Notifications
     renderItem={CustomComponent}
-    data={ "https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json"}
+    data="https://raw.githubusercontent.com/NaveenrajV/cb-notifications/master/Data.json"
     links={{ seeAll: "/seeAll" }}
   />
 </Playground>
+
 
 ## Fully customizable  
 

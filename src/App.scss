@@ -1,7 +1,31 @@
 .App {
+  margin: 2rem;
   display: flex;
-  // justify-content: flex-end;
-  & > div {
-    margin: 5px;
+  justify-content: space-between;
+  align-items: center;
+  // border-bottom: 3px solid #4f98ca;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+  background-color: #effffb;
+  padding: 5px;
+  .title {
+    img {
+      height: 40px;
+      border-radius: 50%;
+      // border: 1px solid black;
+    }
   }
+  .items {
+    display: flex;
+    & > div {
+      margin: 10px;
+      img {
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  // .title {
+  //   justify-self: flex-start;
+  // }
 }
